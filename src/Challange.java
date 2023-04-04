@@ -29,7 +29,7 @@ public class Challange {
         int perimeter = 0;
 
         if (side > 0) {
-            perimeter = (int) 4 * side;
+            perimeter = 4 * side;
             System.out.println("Perimeter of square with side " + side + " is " + perimeter);
         } else if (side < 0) {
             System.out.println("Side of the square is negative. Can not calculate perimeter");
@@ -40,7 +40,7 @@ public class Challange {
         return perimeter;
     }
 
-    public boolean isNaturalNumber(int number) {
+    private boolean isNaturalNumber(int number) {
 
         return (number >= 0) && (number < 10);
     }
@@ -48,24 +48,71 @@ public class Challange {
     public String showNumberInWords(int number) {
         HashMap<Integer, String> numbers = new HashMap<>();
 
-        numbers.put(Number.ZERO.ordinal(), Number.ZERO.name());
-        numbers.put(Number.ONE.ordinal(), Number.ONE.name());
-        numbers.put(Number.TWO.ordinal(), Number.TWO.name());
-        numbers.put(Number.THREE.ordinal(), Number.THREE.name());
-        numbers.put(Number.FOUR.ordinal(), Number.FOUR.name());
-        numbers.put(Number.FIVE.ordinal(), Number.FIVE.name());
-        numbers.put(Number.SIX.ordinal(), Number.SIX.name());
-        numbers.put(Number.SEVEN.ordinal(), Number.SEVEN.name());
-        numbers.put(Number.EIGHT.ordinal(), Number.EIGHT.name());
-        numbers.put(Number.NINE.ordinal(), Number.NINE.name());
+        numbers.put(Numbers.ZERO.ordinal(), Numbers.ZERO.name());
+        numbers.put(Numbers.ONE.ordinal(), Numbers.ONE.name());
+        numbers.put(Numbers.TWO.ordinal(), Numbers.TWO.name());
+        numbers.put(Numbers.THREE.ordinal(), Numbers.THREE.name());
+        numbers.put(Numbers.FOUR.ordinal(), Numbers.FOUR.name());
+        numbers.put(Numbers.FIVE.ordinal(), Numbers.FIVE.name());
+        numbers.put(Numbers.SIX.ordinal(), Numbers.SIX.name());
+        numbers.put(Numbers.SEVEN.ordinal(), Numbers.SEVEN.name());
+        numbers.put(Numbers.EIGHT.ordinal(), Numbers.EIGHT.name());
+        numbers.put(Numbers.NINE.ordinal(), Numbers.NINE.name());
 
         if (isNaturalNumber(number)) {
-            System.out.println(number + " is " + numbers.get(number));
+            System.out.println("Number " + number + " in words is " + numbers.get(number));
         } else {
             System.out.println("Number " + number + " is out of range 0-9");
         }
 
         return numbers.get(number);
+    }
+
+    private String whatIsDayOfWeek(int day) {
+
+        String[] dayOfTheWeek = new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+        if (day >=1 && day <=7){
+            return dayOfTheWeek[day - 1];
+        } else {
+            return "It is not a day of the week";
+        }
+    }
+
+    private String whatIsPostfix(int day) {
+
+        return switch (day) {
+            case 1 -> "st";
+            case 2 -> "nd";
+            case 3 -> "rd";
+            default -> "th";
+        };
+    }
+
+    public String showDayOfTheWeek(int day) {
+
+        System.out.println("The " + day + whatIsPostfix(day) + " day of week is " + whatIsDayOfWeek(day));
+
+        return whatIsDayOfWeek(day);
+    }
+
+    public int whatIsTheBiggestNumber(int[] numbers) {
+
+        int i = 0;
+        int theBiggest = numbers[i];
+
+        System.out.println("The biggest number from:");
+
+        for (; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+            if (theBiggest < numbers[i]) {
+                theBiggest = numbers[i];
+            }
+        }
+
+        System.out.println("is " + theBiggest);
+
+        return theBiggest;
     }
 
 }
