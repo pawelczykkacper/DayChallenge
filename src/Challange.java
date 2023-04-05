@@ -115,4 +115,35 @@ public class Challange {
         return theBiggest;
     }
 
+    public int[] createSetOfNumbers(int maximum) {
+        int[] numbers = new int[maximum];
+
+        for (int i = 0; i < maximum; i++) {
+            numbers[i] = i + 1;
+        }
+
+        return numbers;
+    }
+
+    public int[] isNumberNotDividedByThree(int[] numbers) {
+        int[] numbersNotDividedByTrhee = new int[14];
+        int j = 0;
+
+        for (int number : numbers) {
+            if ((number % 3) != 0) {
+                numbersNotDividedByTrhee[j] = number;
+                j++;
+            }
+        }
+
+        return numbersNotDividedByTrhee;
+    }
+
+    public void showNumbers(int[] numbers) {
+        for (int number : numbers) {
+            System.out.println(number);
+        }
+        System.out.println("are not divided by 3");
+    }
+
 }
