@@ -19,4 +19,22 @@ public class Challange2Test extends Challange{
         showNumbers(isNumberNotDividedByThree(createSetOfNumbers(20)));
     }
 
+    @Test
+    /*
+      Najpierw coś nieskomplikowanego. Napisz program, który pobierze od użytkownika dwie informacje. Pierwszą z nich będzie jakieś słowo, a drugą ilość powtórzeń. Następnie program ma wypisać na konsoli pobrane słowo tyle razy, ile wynosi podana przez użytkownika liczba powtórzeń. Niech kolejne powtórzenia słowa zostaną wyświetlone w osobnej linii. Zakładamy, że wprowadzona liczba nie będzie ujemna i będzie całkowita.
+      Przykład: jeżeli użytkownik wprowadzi słowo “kotlet” oraz liczbę 5, program powinien wypisać:
+      kotlet
+      kotlet
+      kotlet
+      kotlet
+      kotlet
+      Podpowiedź: nie musisz pobierać obu informacji od użytkownika na raz.
+     */
+
+    public void day2Challange2() {
+
+        Assertions.assertEquals(2, 2);
+    }
+
+
 }
